@@ -962,6 +962,9 @@ def ConversionPage2() :
             for addr in IPv4Network(ip) :
                 sr = sr + 1
             print(sr)
+            entreeNSR2.delete(0, END)
+            entreeNSR2.insert(0, sr)
+
 
             if  IP1 & Masque1 != 0 :
                 entreeIP9.insert(0,IP_reseau1)    
@@ -987,6 +990,21 @@ def ConversionPage2() :
 
 
     elif BoutonChoix == 2 :
+        IP_reseau1 = IP1&Masque1
+        IP_reseau2 = IP2&Masque2
+        IP_reseau3 = IP3&Masque3
+        IP_reseau4 = IP4&Masque4
+
+        ip_address = str(IP_reseau1) + "." + str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
+        ip = str(ip_address) + "/" + "255.0.0.0"
+        l1 = list(ip_network(ip).hosts())
+
+        hosts = 0
+        for i in l1 :
+            hosts = hosts + 1
+        print(hosts)
+
+
         entreeIP9.delete(0,END)
         entreeIP9.insert(0,IP1 & 255)
         entreeIP10.delete(0,END)
@@ -1011,6 +1029,21 @@ def ConversionPage2() :
 
 
     elif BoutonChoix == 3 :
+
+        IP_reseau1 = IP1&Masque1
+        IP_reseau2 = IP2&Masque2
+        IP_reseau3 = IP3&Masque3
+        IP_reseau4 = IP4&Masque4
+
+        ip_address = str(IP_reseau1) + "." + str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
+        ip = str(ip_address) + "/" + "255.255.0.0"
+        l1 = list(ip_network(ip).hosts())
+
+        hosts = 0
+        for i in l1 :
+            hosts = hosts + 1
+        print(hosts)
+
         entreeIP9.delete(0,END)
         entreeIP9.insert(0,IP1 & 255)
         entreeIP10.delete(0,END)
@@ -1035,6 +1068,21 @@ def ConversionPage2() :
 
 
     elif BoutonChoix == 4 :
+        
+        IP_reseau1 = IP1&Masque1
+        IP_reseau2 = IP2&Masque2
+        IP_reseau3 = IP3&Masque3
+        IP_reseau4 = IP4&Masque4
+
+        ip_address = str(IP_reseau1) + "." + str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
+        ip = str(ip_address) + "/" + "255.255.255.0"
+        l1 = list(ip_network(ip).hosts())
+
+        hosts = 0
+        for i in l1 :
+            hosts = hosts + 1
+        print(hosts)
+
         entreeIP9.delete(0,END)
         entreeIP9.insert(0,IP1 & 255)
         entreeIP10.delete(0,END)
@@ -1067,6 +1115,10 @@ def ConversionPage2() :
             LegendeErreur1 = Label(fenetreF, text='Erreur, votre entrée de CIDR ne correspond pas a un nombre !!!')
             LegendeErreur1.place(x=0, y=50)
         print(CIDR1)
+
+        
+        entreeNSR2.delete(0, END)
+
         if CIDR1 == 0 :
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,0)
@@ -1081,6 +1133,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,1)
             entreeMSR2.insert(0,4294967294)
         elif CIDR1 == 1 :
+            Masque1 = 128
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 128)
             entreeIP10.delete(0,END)
@@ -1094,6 +1147,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,2)
             entreeMSR2.insert(0,2147483646)
         elif CIDR1 == 2 :
+            Masque1 = 192
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 192)
             entreeIP10.delete(0,END)
@@ -1107,6 +1161,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,4)
             entreeMSR2.insert(0,1073741822)
         elif CIDR1 == 3 :
+            Masque1 = 224
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 224)
             entreeIP10.delete(0,END)
@@ -1120,6 +1175,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,8)
             entreeMSR2.insert(0,536870910)
         elif CIDR1 == 4 :
+            Masque1 = 240
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 240)
             entreeIP10.delete(0,END)
@@ -1133,6 +1189,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,16)
             entreeMSR2.insert(0,268435454)
         elif CIDR1 == 5 :
+            Masque1 = 248
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 248)
             entreeIP10.delete(0,END)
@@ -1147,6 +1204,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,32)
             entreeMSR2.insert(0,134217726)
         elif CIDR1 == 6 :
+            Masque1 = 252
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 252)
             entreeIP10.delete(0,END)
@@ -1160,6 +1218,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,64)
             entreeMSR2.insert(0,67108862)
         elif CIDR1 == 7 :
+            Masque1 = 254
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 254)
             entreeIP10.delete(0,END)
@@ -1173,6 +1232,7 @@ def ConversionPage2() :
             entreeNSR2.insert(0,128)
             entreeMSR2.insert(0,33554430)
         elif CIDR1 == 8 :
+            Masque1 = 255
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1186,6 +1246,8 @@ def ConversionPage2() :
             entreeNSR2.insert(0,255)
             entreeMSR2.insert(0,16777214)
         elif CIDR1 == 9 :
+            Masque1 = 255
+            Masque2 = 128
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1199,6 +1261,8 @@ def ConversionPage2() :
             entreeNSR2.insert(0,2)
             entreeMSR2.insert(0,8388606)
         elif CIDR1 == 10 :
+            Masque1 = 255
+            Masque2 = 192
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1213,6 +1277,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,4194302)
 
         elif CIDR1 == 11 :
+            Masque1 = 255
+            Masque2 = 224
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1227,6 +1293,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,2097150)
 
         elif CIDR1 == 12 :
+            Masque1 = 255
+            Masque2 = 240
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1241,6 +1309,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,1048574)
 
         elif CIDR1 == 13 :
+            Masque1 = 255
+            Masque2 = 248
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1255,6 +1325,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,524286)
 
         elif CIDR1 == 14 :
+            Masque1 = 255
+            Masque2 = 252
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1269,6 +1341,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,262142)
 
         elif CIDR1 == 15 :
+            Masque1 = 255
+            Masque2 = 254
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1283,6 +1357,8 @@ def ConversionPage2() :
             entreeMSR2.insert(0,262142)
 
         elif CIDR1 == 16 :
+            Masque1 = 255
+            Masque2 = 255
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1297,6 +1373,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,65534)
 
         elif CIDR1 == 17 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 128
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1311,6 +1390,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,32766)
 
         elif CIDR1 == 18 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 192
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1325,6 +1407,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,16382)
 
         elif CIDR1 == 19 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 224
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1339,6 +1424,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,8190)
 
         elif CIDR1 == 20 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 240
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1353,6 +1441,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,4094)
 
         elif CIDR1 == 21 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 248
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1367,6 +1458,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,2046)
 
         elif CIDR1 == 22 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 252
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1381,6 +1475,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,1022)
 
         elif CIDR1 == 23 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 254
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1395,6 +1492,9 @@ def ConversionPage2() :
             entreeMSR2.insert(0,510)
 
         elif CIDR1 == 24 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1409,6 +1509,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,254)
 
         elif CIDR1 == 25 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 128
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1424,6 +1528,10 @@ def ConversionPage2() :
 
 
         elif CIDR1 == 26 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 192
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1438,6 +1546,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,62)
 
         elif CIDR1 == 27 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 224
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1452,6 +1564,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,30)
 
         elif CIDR1 == 28 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 240
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1466,6 +1582,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,14)
 
         elif CIDR1 == 29 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 248
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1480,6 +1600,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,6)
 
         elif CIDR1 == 30 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 252
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1495,6 +1619,10 @@ def ConversionPage2() :
 
 
         elif CIDR1 == 31 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 254
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1509,6 +1637,10 @@ def ConversionPage2() :
             entreeMSR2.insert(0,2)
 
         elif CIDR1 == 32 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 255
             entreeIP9.delete(0,END)
             entreeIP9.insert(0,IP1 & 255)
             entreeIP10.delete(0,END)
@@ -1521,6 +1653,38 @@ def ConversionPage2() :
             entreeMSR2.delete(0,END)
             entreeNSR2.insert(0,255)
             entreeMSR2.insert(0,1)
+        
+        IP_reseau1 = IP1&Masque1
+        IP_reseau2 = IP2&Masque2
+        IP_reseau3 = IP3&Masque3
+        IP_reseau4 = IP4&Masque4
+
+        ip_address = str(IP_reseau1)+ "." +str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
+        ip = str(ip_address)+"/"+str(CIDR1)
+
+        print(ip)
+        
+
+        l1 = list(ip_network(ip).hosts())
+        hosts = 0
+        for i in l1 :
+            hosts = hosts + 1
+        print(hosts)
+
+        bc = IPv4Network(ip).broadcast_address
+        print(bc)
+
+        bc2 = str(bc).split(".")
+        print(bc2)
+
+        entreeBC1.delete(0, END)
+        entreeBC2.delete(0, END)
+        entreeBC3.delete(0, END)
+        entreeBC4.delete(0, END)
+        entreeBC1.insert(0, bc2[0])
+        entreeBC2.insert(0, bc2[1])
+        entreeBC3.insert(0, bc2[2])
+        entreeBC4.insert(0, bc2[3])
 
 
         
@@ -1696,7 +1860,7 @@ entreeBC4.insert(0,0)
 LegendeResultatNSR2 = Label(f2, text='Nombre de Sous-réseau :').place(x=0, y=260)
 entreeNSR2 = Entry(f2)
 entreeNSR2.place(width=150, height=25, x=290, y=260)
-entreeNSR2.insert(0,1)
+entreeNSR2.insert(0,0)
 
 
 LegendeResultatMSR2 = Label(f2, text='Machine par Sous-réseau :').place(x=0, y=290)
@@ -1710,6 +1874,7 @@ entreeNMSR = Entry(f2)
 entreeNMSR.place(width=150, height=25, x=290, y=320)
 entreeNMSR.insert(0,0)
 
+# Page 3
 
 LegendeAdresse3 = Label(f3, text='Notation Decimale')
 LegendeAdresse3.place(x=0, y=15)
@@ -1723,8 +1888,8 @@ entreeIP16 = Entry(f3)
 entreeIP16.place(width=30, height=25, x=410, y=12)
 
 LegendeResultatNB1 = Label(f3, text='Notation Hexadecimale').place(x=0, y=40)
-entreeNSR2 = Entry(f3)
-entreeNSR2.place(width=150, height=25, x=290, y=40)
+entreeNHexa = Entry(f3)
+entreeNHexa.place(width=150, height=25, x=290, y=40)
 
 LegendeBinaire = Label(f3, text='Notation Binaire')
 LegendeBinaire.place(x=0, y=75)
