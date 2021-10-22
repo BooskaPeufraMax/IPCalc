@@ -938,33 +938,568 @@ def ConversionPage2() :
         LegendeErreur1.place(x=0, y=50)
     
     if BoutonChoix == 1 :
+        entreeIP9.delete(0,END)
+        entreeIP10.delete(0,END)
+        entreeIP11.delete(0,END)
+        entreeIP12.delete(0,END)
+
+        ip_calculate(IP1, IP2, IP3, IP4)
+        IP_reseau1 = IP1&Masque1
+        IP_reseau2 = IP2&Masque2
+        IP_reseau3 = IP3&Masque3
+        IP_reseau4 = IP4&Masque4
+
+        ip_address = str(IP_reseau1)+ "." +str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
+        ip_mask = str(Masque1)+ "." +str(Masque2) + "." + str(Masque3) + "." + str(Masque4)
+        ip = str(ip_address)+"/"+str(ip_mask)
+        l1 = list(ip_network(ip).hosts())
+        hosts = 0
+        for i in l1 :
+            hosts = hosts + 1
+        print(hosts)
+
+        CIDR = str(ip_network(ip))
+
+        CIDR1 = str(CIDR).split('.')
+        CIDR1 = str(CIDR1).split('/')
+        CIDR1 = CIDR1[]
+
+        print(CIDR1)
+
+        if CIDR1 == 0 :
             entreeIP9.delete(0,END)
+            entreeIP9.insert(0,0)
             entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
             entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
             entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,1)
+            entreeMSR2.insert(0,4294967294)
+        elif CIDR1 == 1 :
+            Masque1 = 128
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 128)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,2)
+            entreeMSR2.insert(0,2147483646)
+        elif CIDR1 == 2 :
+            Masque1 = 192
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 192)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,4)
+            entreeMSR2.insert(0,1073741822)
+        elif CIDR1 == 3 :
+            Masque1 = 224
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 224)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,8)
+            entreeMSR2.insert(0,536870910)
+        elif CIDR1 == 4 :
+            Masque1 = 240
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 240)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,16)
+            entreeMSR2.insert(0,268435454)
+        elif CIDR1 == 5 :
+            Masque1 = 248
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 248)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeCIDR2.delete(0,END)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,32)
+            entreeMSR2.insert(0,134217726)
+        elif CIDR1 == 6 :
+            Masque1 = 252
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 252)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,64)
+            entreeMSR2.insert(0,67108862)
+        elif CIDR1 == 7 :
+            Masque1 = 254
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 254)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,128)
+            entreeMSR2.insert(0,33554430)
+        elif CIDR1 == 8 :
+            Masque1 = 255
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,0)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,255)
+            entreeMSR2.insert(0,16777214)
+        elif CIDR1 == 9 :
+            Masque1 = 255
+            Masque2 = 128
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 128)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,2)
+            entreeMSR2.insert(0,8388606)
+        elif CIDR1 == 10 :
+            Masque1 = 255
+            Masque2 = 192
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 192)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,4)
+            entreeMSR2.insert(0,4194302)
 
-            ip_calculate(IP1, IP2, IP3, IP4)
-            IP_reseau1 = IP1&Masque1
-            IP_reseau2 = IP2&Masque2
-            IP_reseau3 = IP3&Masque3
-            IP_reseau4 = IP4&Masque4
+        elif CIDR1 == 11 :
+            Masque1 = 255
+            Masque2 = 224
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 224)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,8)
+            entreeMSR2.insert(0,2097150)
 
-            ip_address = str(IP_reseau1)+ "." +str(IP_reseau2) + "." + str(IP_reseau3) + "." + str(IP_reseau4)
-            ip_mask = str(Masque1)+ "." +str(Masque2) + "." + str(Masque3) + "." + str(Masque4)
-            ip = str(ip_address)+"/"+str(ip_mask)
-            l1 = list(ip_network(ip).hosts())
-            hosts = 0
-            for i in l1 :
-                hosts = hosts + 1
-            print(hosts)
+        elif CIDR1 == 12 :
+            Masque1 = 255
+            Masque2 = 240
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 240)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,16)
+            entreeMSR2.insert(0,1048574)
 
-            sr = 0
-            for addr in IPv4Network(ip) :
-                sr = sr + 1
-            print(sr)
-            entreeNSR2.delete(0, END)
-            entreeNSR2.insert(0, sr)
+        elif CIDR1 == 13 :
+            Masque1 = 255
+            Masque2 = 248
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 248)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,32)
+            entreeMSR2.insert(0,524286)
 
+        elif CIDR1 == 14 :
+            Masque1 = 255
+            Masque2 = 252
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 252)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,64)
+            entreeMSR2.insert(0,262142)
+
+        elif CIDR1 == 15 :
+            Masque1 = 255
+            Masque2 = 254
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 254)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,128)
+            entreeMSR2.insert(0,262142)
+
+        elif CIDR1 == 16 :
+            Masque1 = 255
+            Masque2 = 255
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,0)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,255)
+            entreeMSR2.insert(0,65534)
+
+        elif CIDR1 == 17 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 128
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 128)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,2)
+            entreeMSR2.insert(0,32766)
+
+        elif CIDR1 == 18 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 192
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 192)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,4)
+            entreeMSR2.insert(0,16382)
+
+        elif CIDR1 == 19 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 224
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 224)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,8)
+            entreeMSR2.insert(0,8190)
+
+        elif CIDR1 == 20 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 240
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 240)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,16)
+            entreeMSR2.insert(0,4094)
+
+        elif CIDR1 == 21 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 248
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 248)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,32)
+            entreeMSR2.insert(0,2046)
+
+        elif CIDR1 == 22 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 252
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 252)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,64)
+            entreeMSR2.insert(0,1022)
+
+        elif CIDR1 == 23 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 254
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 254)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,128)
+            entreeMSR2.insert(0,510)
+
+        elif CIDR1 == 24 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,0)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,255)
+            entreeMSR2.insert(0,254)
+
+        elif CIDR1 == 25 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 128
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 128)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,2)
+            entreeMSR2.insert(0,126)
+
+
+        elif CIDR1 == 26 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 192
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 192)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,4)
+            entreeMSR2.insert(0,62)
+
+        elif CIDR1 == 27 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 224
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 224)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,8)
+            entreeMSR2.insert(0,30)
+
+        elif CIDR1 == 28 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 240
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 240)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,16)
+            entreeMSR2.insert(0,14)
+
+        elif CIDR1 == 29 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 248
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 248)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,32)
+            entreeMSR2.insert(0,6)
+
+        elif CIDR1 == 30 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 252
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 252)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,64)
+            entreeMSR2.insert(0,2)
+
+
+        elif CIDR1 == 31 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 254
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 254)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,128)
+            entreeMSR2.insert(0,2)
+
+        elif CIDR1 == 32 :
+            Masque1 = 255
+            Masque2 = 255
+            Masque3 = 255
+            Masque4 = 255
+            entreeIP9.delete(0,END)
+            entreeIP9.insert(0,IP1 & 255)
+            entreeIP10.delete(0,END)
+            entreeIP10.insert(0,IP2 & 255)
+            entreeIP11.delete(0,END)
+            entreeIP11.insert(0,IP3 & 255)
+            entreeIP12.delete(0,END)
+            entreeIP12.insert(0,IP4 & 255)
+            entreeNSR2.delete(0,END)
+            entreeMSR2.delete(0,END)
+            entreeNSR2.insert(0,255)
+            entreeMSR2.insert(0,1)
 
             if  IP1 & Masque1 != 0 :
                 entreeIP9.insert(0,IP_reseau1)    
@@ -1686,6 +2221,8 @@ def ConversionPage2() :
         entreeBC3.insert(0, bc2[2])
         entreeBC4.insert(0, bc2[3])
 
+        entreeNMSR.delete(0, END)
+
 
         
 
@@ -1869,10 +2406,10 @@ entreeMSR2.place(width=150, height=25, x=290, y=290)
 entreeMSR2.insert(0,0)
 
 
-LegendeResultatNMSR = Label(f2, text='Numero de Machine dans ce Sous-réseau :').place(x=0, y=320)
-entreeNMSR = Entry(f2)
-entreeNMSR.place(width=150, height=25, x=290, y=320)
-entreeNMSR.insert(0,0)
+# LegendeResultatNMSR = Label(f2, text='Numero de Machine dans ce Sous-réseau :').place(x=0, y=320)
+# entreeNMSR = Entry(f2)
+# entreeNMSR.place(width=150, height=25, x=290, y=320)
+# entreeNMSR.insert(0,0)
 
 # Page 3
 
